@@ -4,15 +4,18 @@ import {useFormik} from "formik";
 import {LoginSchema} from "../../schemas/Schemas.js";
 import LoginImage from "../../assets/login.svg";
 import SmallLoader from "../../components/small-loader/SmallLoader.jsx";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {BsEye, BsEyeSlash} from "react-icons/bs";
 import {loginUser} from "../../services/Api.js";
+import userContext from "../../store/UserContext.jsx";
 
 export default function Login() {
     const [showPassword,setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+
+    const context = useContext(userContext);
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -42,6 +45,11 @@ export default function Login() {
             const token = res?.accessToken;
             const user = res.user;
             if(token){
+                context.onUserUpdate({
+                    firstname: user.firstname,
+                    lastname: user.lastname,
+                    username: user.username
+                });
                 localStorage.setItem("token",token);
                 localStorage.setItem("user", JSON.stringify(user));
                 navigate("/");

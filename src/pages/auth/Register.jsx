@@ -3,12 +3,13 @@ import {useFormik} from "formik";
 import {Link, useNavigate} from "react-router-dom";
 import {RegisterSchema} from "../../schemas/Schemas.js";
 import RegisterImage from "../../assets/register.svg";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {registerUser} from "../../services/Api.js";
 import SmallLoader from "../../components/small-loader/SmallLoader.jsx";
 import {BsEye, BsEyeSlash} from "react-icons/bs";
 import {toast} from "react-toastify";
-//import {toast} from "react-toastify";
+import userContext from "../../store/UserContext.jsx";
+
 
 export default function Register() {
     const [showPassword, setShowPassword] = useState(false);
@@ -16,6 +17,8 @@ export default function Register() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+
+    const context = useContext(userContext);
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -53,6 +56,11 @@ export default function Register() {
             const token = res?.accessToken;
             const user = res?.user;
             if (token) {
+                context.onUserUpdate({
+                    firstname: user.firstname,
+                    lastname: user.lastname,
+                    username: user.username
+                });
                 localStorage.setItem("token", token);
                 localStorage.setItem("user", JSON.stringify(user));
                 navigate("/");
