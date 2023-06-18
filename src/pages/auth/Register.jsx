@@ -7,6 +7,7 @@ import {useState} from "react";
 import {registerUser} from "../../services/Api.js";
 import SmallLoader from "../../components/small-loader/SmallLoader.jsx";
 import {BsEye, BsEyeSlash} from "react-icons/bs";
+import {toast} from "react-toastify";
 //import {toast} from "react-toastify";
 
 export default function Register() {
