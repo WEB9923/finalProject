@@ -1,0 +1,178 @@
+.form-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.form-section .container {
+  max-width: 1250px;
+  width: 100%;
+  margin: auto;
+  padding: 0 10px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+@media screen and (max-width: 850px) {
+  .form-section .container {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .form-section .container {
+    padding: 0 15px;
+  }
+}
+.form-section .container .form-image {
+  width: 45%;
+}
+.form-section .container .form-image img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 900px) {
+  .form-section .container {
+    justify-content: center;
+    gap: 0;
+  }
+  .form-section .container .form-image {
+    display: none;
+  }
+}
+.form-section .container form {
+  width: 500px;
+  height: auto;
+  min-height: 350px;
+  padding: 20px 15px;
+  background-color: #cecee6;
+  box-shadow: 1px 2px 5px 1px #b2bbd0;
+  border-radius: 12px;
+}
+@media screen and (max-width: 550px) {
+  .form-section .container form {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .form-section .container form {
+    width: 100%;
+  }
+}
+.form-section .container form h1 {
+  text-transform: capitalize;
+  color: #5c5a5a;
+  font-size: 35px;
+  position: relative;
+  padding: 0 70px 5px 0;
+  width: fit-content;
+}
+.form-section .container form h1:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #e3e3ff;
+  border-radius: 6px;
+}
+.form-section .container form .form-wrapper {
+  margin-top: 20px;
+}
+.form-section .container form .form-wrapper .form-control {
+  margin-top: 15px;
+}
+.form-section .container form .form-wrapper .form-control label {
+  margin-left: 5px;
+  color: #5c5a5a;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.form-section .container form .form-wrapper .form-control .input-control {
+  position: relative;
+}
+.form-section .container form .form-wrapper .form-control .input-control input {
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  outline: none;
+  background-color: #e3e3ff;
+  padding-inline: 10px;
+  font-size: 17px;
+  color: #5c5a5a;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+.form-section .container form .form-wrapper .form-control .input-control input:focus {
+  border: 3px solid #3862b7;
+}
+.form-section .container form .form-wrapper .form-control .input-control input.input-error {
+  border: 3px solid #bf5e5e;
+}
+.form-section .container form .form-wrapper .form-control .input-control #loginPassword, .form-section .container form .form-wrapper .form-control .input-control #password, .form-section .container form .form-wrapper .form-control .input-control #confirm {
+  padding-right: 40px;
+}
+.form-section .container form .form-wrapper .form-control .input-control .show_hide_password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #cecee6;
+  border-radius: 50%;
+  user-select: none;
+  cursor: pointer;
+  opacity: 0.8;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 6px;
+}
+.form-section .container form .form-wrapper .form-control .input-control .show_hide_password svg {
+  color: #5c5a5a;
+}
+.form-section .container form .form-wrapper .form-control .error-text {
+  color: #bf5e5e;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.form-section .container form .form-wrapper .form-control button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  border: none;
+  text-transform: capitalize;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #517cd1;
+  width: 100%;
+  height: 45px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #e3e3ff;
+  transition: all 0.2s ease;
+}
+.form-section .container form .form-wrapper .form-control button:hover {
+  background-color: #3862b7;
+}
+.form-section .container form .form-wrapper .form-control button:active {
+  scale: 0.95;
+}
+.form-section .container form .form-wrapper .form-control p {
+  color: #5c5a5a;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+.form-section .container form .form-wrapper .form-control p a {
+  color: #3862b7;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=Auth.css.map */

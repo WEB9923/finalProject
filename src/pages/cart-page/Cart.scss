@@ -1,0 +1,21 @@
+@import "../../styles/Variables";
+@import "../../styles/Mixins";
+
+
+.cart-section{
+  .container{
+    @include container();
+    h1{
+      text-transform: capitalize;
+      color: $color;
+      font-weight: $extraBoldWeight;
+      font-size: $extra;
+      margin-bottom: 20px;
+    }
+    .cart-wrapper{
+      @include flexCol();
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

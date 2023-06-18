@@ -1,0 +1,99 @@
+.profile-details {
+  position: absolute;
+  width: 280px;
+  z-index: 999;
+  height: auto;
+  min-height: 150px;
+  padding: 20px 10px;
+  top: 100%;
+  right: 0;
+  background-color: #cecee6;
+  border-top: 3px solid #3862b7;
+  border-bottom: 3px solid #3862b7;
+  border-radius: 6px;
+  box-shadow: 1px 2px 5px 1px #b2bbd0;
+  animation: UserDetailsAnimation 0.4s ease;
+}
+.profile-details .user-name {
+  text-align: center;
+  color: #5c5a5a;
+  text-transform: capitalize;
+  font-weight: 900;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  padding: 5px 0 15px 0;
+  border-bottom: 1px solid #e3e3ff;
+}
+.profile-details .profile-details-wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.profile-details .profile-details-wrapper .favorites-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  border: none;
+  text-transform: capitalize;
+  outline: none;
+  height: 40px;
+  background-color: #e3e3ff;
+  font-size: 17px;
+  width: 100%;
+  padding-inline: 10px;
+  color: #5c5a5a;
+  font-weight: 700;
+}
+.profile-details .profile-details-wrapper .favorites-btn:hover {
+  opacity: 0.6;
+}
+.profile-details .profile-details-wrapper .favorites-btn.active {
+  color: #517cd1;
+}
+.profile-details .profile-details-wrapper .log-out-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  border: none;
+  text-transform: capitalize;
+  outline: none;
+  height: 40px;
+  padding-inline: 10px;
+  background-color: #d95a5a;
+  width: 100%;
+  color: #5c5a5a;
+  font-size: 17px;
+  font-weight: 700;
+}
+.profile-details .profile-details-wrapper .log-out-btn:hover {
+  opacity: 0.6;
+}
+
+@keyframes UserDetailsAnimation {
+  0% {
+    transform: translateY(30px);
+    scale: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateY(0);
+    scale: 1;
+    visibility: visible;
+  }
+}
+
+/*# sourceMappingURL=ProfileDetails.css.map */

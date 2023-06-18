@@ -1,0 +1,176 @@
+.filter-content {
+  width: 300px;
+  height: calc(100vh - 90px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #cecee6;
+  box-shadow: 1px 2px 5px 1px #b2bbd0;
+  padding: 20px 10px;
+  border-radius: 12px;
+  animation: showHideAnimation 0.5s ease;
+}
+.filter-content .filter-close {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.filter-content .filter-close .close {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  border: none;
+  text-transform: capitalize;
+  outline: none;
+  background-color: #d95a5a;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.filter-content .filter-close .close svg {
+  color: #e3e3ff;
+}
+.filter-content .filter-close .close:hover {
+  scale: 0.95;
+  opacity: 0.6;
+}
+.filter-content .filter-header {
+  margin-bottom: 15px;
+}
+.filter-content .filter-header h3 {
+  color: #5c5a5a;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 22px;
+  text-align: center;
+}
+.filter-content .filter-wrapper {
+  overflow-y: auto;
+  animation: showDetailsAnimation 1s ease;
+}
+.filter-content .filter-wrapper button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  border: none;
+  text-transform: capitalize;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  background-color: #e3e3ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-weight: 700;
+  color: #5c5a5a;
+  font-size: 17px;
+  z-index: 99;
+  transition: 0.2s ease;
+}
+.filter-content .filter-wrapper button:hover {
+  opacity: 0.6;
+}
+.filter-content .filter-wrapper .categories-filter, .filter-content .filter-wrapper .brand-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: #e3e3ff;
+  padding: 10px 5px;
+  margin-top: 4px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 5px 1px #b2bbd0;
+  animation: showDetailsAnimation 1s ease;
+}
+.filter-content .filter-wrapper .categories-filter label, .filter-content .filter-wrapper .brand-filter label {
+  padding: 7px 10px;
+  background-color: #cecee6;
+  color: #5c5a5a;
+  width: 100%;
+  margin: 4px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  transition: 0.3s ease;
+}
+.filter-content .filter-wrapper .categories-filter label:hover, .filter-content .filter-wrapper .brand-filter label:hover {
+  opacity: 0.7;
+  scale: 0.95;
+}
+.filter-content .filter-wrapper .categories-filter label input[type=radio], .filter-content .filter-wrapper .brand-filter label input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  border: 2px solid #517cd1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter-content .filter-wrapper .categories-filter label input[type=radio]:before, .filter-content .filter-wrapper .brand-filter label input[type=radio]:before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color: #3862b7;
+  border-radius: 2px;
+  scale: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+.filter-content .filter-wrapper .categories-filter label input[type=radio]:checked:before, .filter-content .filter-wrapper .brand-filter label input[type=radio]:checked:before {
+  scale: 1;
+  visibility: visible;
+}
+.filter-content .filter-wrapper .filter {
+  margin-top: 15px;
+  background-color: #517cd1;
+  color: #e3e3ff;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.filter-content .filter-wrapper .clear-filter-querys {
+  background-color: #d95a5a;
+  justify-content: flex-start;
+  gap: 10px;
+  color: #e3e3ff;
+  margin-top: 10px;
+}
+
+@keyframes showHideAnimation {
+  0% {
+    left: -300px;
+    opacity: 0.8;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes showDetailsAnimation {
+  0% {
+    transform: translateY(-30px);
+    visibility: hidden;
+    scale: 0.3;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+    scale: 1;
+  }
+}
+
+/*# sourceMappingURL=QueryParamsFilter.css.map */

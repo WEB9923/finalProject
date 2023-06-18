@@ -1,0 +1,84 @@
+@import "../../styles/Variables";
+@import "../../styles/Mixins";
+
+.profile-details{
+  position: absolute;
+  width: 280px;
+  z-index: 999;
+  height: auto;
+  min-height: 150px;
+  padding: 20px 10px;
+  top: 100%;
+  right: 0;
+  background-color: $darkestWhite;
+  border-top:3px solid $darkestBlue ;
+  border-bottom:3px solid $darkestBlue ;
+  border-radius: $smallRadius;
+  box-shadow: $shadow;
+  animation: UserDetailsAnimation .4s ease;
+
+  .user-name{
+    text-align: center;
+    color: $color;
+    text-transform: capitalize;
+    font-weight: $extraBoldWeight;
+    letter-spacing: 2px;
+    @include lineClamp1();
+    user-select: none;
+    padding: 5px 0 15px 0;
+    border-bottom: 1px solid $bg;
+  }
+  .profile-details-wrapper{
+    margin-top: 20px;
+    @include flexCol();
+    gap: 15px;
+    .favorites-btn{
+      @include flexAlignCenter();
+      gap: 5px;
+      @include button();
+      height: 40px;
+      background-color: $bg;
+      font-size: $medium;
+      width: 100%;
+      padding-inline: 10px;
+      color: $color;
+      font-weight: $boldWeight;
+      &:hover{
+        opacity: .6;
+      }
+      &.active{
+        color: $blue;
+      }
+    }
+    .log-out-btn{
+      @include flexAlignCenter();
+      gap: 5px;
+      @include button();
+      height: 40px;
+      padding-inline: 10px;
+      background-color: $red;
+      width: 100%;
+      color: $color;
+      font-size: $medium;
+      font-weight: $boldWeight;
+      &:hover{
+        opacity: .6;
+      }
+    }
+  }
+}
+
+@keyframes UserDetailsAnimation {
+  0%{
+    transform: translateY(30px);
+    //opacity: 0;
+    scale: 0;
+    visibility: hidden;
+  }
+  100%{
+    transform: translateY(0);
+    //opacity: 1;
+    scale: 1;
+    visibility: visible;
+  }
+}

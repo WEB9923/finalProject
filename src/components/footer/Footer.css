@@ -1,0 +1,105 @@
+.footer {
+  padding: 30px 0;
+  background-color: #cecee6;
+}
+.footer .container {
+  max-width: 1250px;
+  width: 100%;
+  margin: auto;
+  padding: 0 10px;
+}
+@media screen and (max-width: 850px) {
+  .footer .container {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .footer .container {
+    padding: 0 15px;
+  }
+}
+.footer .container .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid #e3e3ff;
+}
+.footer .container .footer-top .logo {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 900;
+  color: #517cd1;
+}
+.footer .container .footer-top .logo img {
+  width: 45px;
+}
+.footer .container .footer-top .logo h1 {
+  font-size: 22px;
+  text-transform: capitalize;
+}
+.footer .container .footer-top .social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.footer .container .footer-top .social .fb {
+  color: #6767c4;
+}
+.footer .container .footer-top .social .tw {
+  color: #2c84e9;
+}
+.footer .container .footer-top .social .inst {
+  color: #d52473;
+}
+.footer .container .footer-top .social a:hover {
+  opacity: 0.7;
+}
+.footer .container .footer-cols {
+  padding: 100px 0;
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  gap: 50px;
+}
+.footer .container .footer-cols .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer .container .footer-cols .col h3 {
+  color: #5c5a5a;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
+.footer .container .footer-cols .col a, .footer .container .footer-cols .col p {
+  color: #517cd1;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.footer .container .footer-cols .col a:hover, .footer .container .footer-cols .col p:hover {
+  opacity: 0.7;
+}
+.footer .container .copyright {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  padding: 10px 5px;
+  background-color: #e3e3ff;
+  border-radius: 6px;
+}
+.footer .container .copyright p {
+  font-weight: 700;
+  color: #3862b7;
+  text-transform: capitalize;
+}
+
+/*# sourceMappingURL=Footer.css.map */

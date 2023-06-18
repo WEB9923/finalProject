@@ -1,0 +1,33 @@
+.favorites .container {
+  max-width: 1250px;
+  width: 100%;
+  margin: auto;
+  padding: 0 10px;
+}
+@media screen and (max-width: 850px) {
+  .favorites .container {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .favorites .container {
+    padding: 0 15px;
+  }
+}
+.favorites .container h1 {
+  text-transform: capitalize;
+  color: #5c5a5a;
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.favorites .container .favorites-wrapper {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=Favorites.css.map */

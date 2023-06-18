@@ -1,0 +1,78 @@
+@import "../../styles/Variables";
+@import "../../styles/Mixins";
+
+.footer{
+  padding: 30px 0;
+  background-color: $darkestWhite;
+  .container{
+    @include container();
+    .footer-top{
+      @include flexAlignCenter();
+      justify-content: space-between;
+      padding: 10px 0 20px 0;
+      border-bottom: 1px solid $bg;
+      .logo{
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        font-weight: $extraBoldWeight;
+        color: $blue;
+        img {
+          width: 45px;
+        }
+        h1{
+          font-size: $large;
+          text-transform: capitalize;
+        }
+      }
+      .social{
+        @include flexAlignCenter();
+        gap: 15px;
+        .fb{color: #6767c4}
+        .tw{color: #2c84e9}
+        .inst{color: #d52473}
+        a:hover{opacity: .7}
+      }
+    }
+    .footer-cols{
+      padding: 100px 0;
+      @include flexWrapper();
+      gap: 50px;
+      .col{
+        @include flexCol();
+        h3{
+          color: $color;
+          font-weight: $boldWeight;
+          text-transform: capitalize;
+          padding-bottom: 10px;
+        }
+        a,p{
+          color: $blue;
+          font-weight: $mediumWeight;
+          font-size: $small;
+          text-transform: capitalize;
+          margin-top: 10px;
+          cursor: pointer;
+          &:hover{
+            opacity: .7;
+          }
+        }
+      }
+    }
+    .copyright{
+      width: 100%;
+      @include flexAlignCenter();
+      justify-content: center;
+      font-size: $medium;
+      padding: 10px 5px;
+      background-color: $bg;
+      border-radius: $smallRadius;
+      p{
+        font-weight: $boldWeight;
+        color: $darkestBlue;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
