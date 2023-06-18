@@ -64,14 +64,16 @@ export default function Register() {
         }
     }
 
-    // if(error) {   /* გადადის ცარიელ გვერდზე და ვერ დავფიქსე... */
-    //     return (
-    //         toast.error(error,{
-    //             position:"top-right",
-    //             style:{backgroundColor:"#cecee6"}
-    //         })
-    //     )
-    // }
+    if(error)console.log(error) /// დალოგვით ილოგება სწორად მარტო მესიჯი //
+
+    if(error) {   /* გადადის ცარიელ გვერდზე და ვერ დავფიქსე... */
+        return (
+            toast.error(error,{
+                position:"top-right",
+                style:{backgroundColor:"#cecee6"}
+            })
+        )
+    }
 
     return (
         <>
