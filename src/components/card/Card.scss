@@ -36,6 +36,10 @@
           color: $blue;
           margin: 0;
           @include lineClamp1();
+          &:hover{
+            text-decoration: underline;
+            opacity: .7;
+          }
         }
       }
     }

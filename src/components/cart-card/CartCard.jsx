@@ -27,7 +27,7 @@ export default function CartCard({id,thumbnail,title,price,deleteCartProduct,isD
                         <img src={thumbnail} alt=""/>
                     </div>
                     <div className="cart-card-title-price">
-                        <Link to={`/product/${id}`}>{title}</Link>
+                        <Link className="cart-product-title" to={`/product/${id}`}>{title}</Link>
                         <h4>price <span>${price}</span></h4>
                         <div className="pcs">
                             <button onClick={handleDecrement}><FaMinus size={22}/></button>
@@ -38,7 +38,7 @@ export default function CartCard({id,thumbnail,title,price,deleteCartProduct,isD
                 </div>
                 <div className="cart-card-right-side">
                     <div className="">
-                        <button onClick={() => deleteCartProduct()}>
+                        <button className="delete-cart-product" onClick={() => deleteCartProduct()}>
                             {isDeleting ? <><SmallLoader/></> : <><BsTrash size={20}/></>}
                         </button>
                     </div>

@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, redirect} from "react-router-dom";
 import App from "../App.jsx";
 import Login from "../pages/auth/Login.jsx";
 import AuthLayout from "../pages/auth/AuthLayout.jsx";
@@ -9,6 +9,7 @@ import Products from "../pages/products-page/Products.jsx";
 import SingleProduct from "../pages/single-product-page/SingleProduct.jsx";
 import Favorites from "../pages/favorites-page/Favorites.jsx";
 import Cart from "../pages/cart-page/Cart.jsx";
+import {JWTdecoder} from "../utils/JWTdecoder.js";
 const Routes = createBrowserRouter([
     {
         path:"/",
@@ -17,6 +18,18 @@ const Routes = createBrowserRouter([
             {
                 path:"/auth",
                 element:<AuthLayout/>,
+                loader: () => {
+                    const token = localStorage.getItem("token");
+                    if(token) {
+                        const decodedToken = JWTdecoder(token);
+                        const {exp} = decodedToken;
+                        const now = Date.now() / 1000;
+                        if(exp && exp > now){
+                            return redirect("/");
+                        }
+                    }
+                    return null;
+                },
                 children:[
                     {index:true,element:<Login/>},
                     {path:"/auth/login",element:<Login/>},
@@ -26,6 +39,20 @@ const Routes = createBrowserRouter([
             {
                 path:"/",
                 element:<Layout/>,
+                loader:() => {
+                  const token = localStorage.getItem("token");
+                  if(token) {
+                      const decodedToken = JWTdecoder(token);
+                      const {exp} = decodedToken;
+                      const now = Date.now() / 1000;
+                      if(!exp || exp < now){
+                          localStorage.removeItem("token");
+                          return redirect("/auth");
+                      }
+                      return null;
+                  }
+                    return redirect("/auth");
+                },
                 children:[
                     {index: true, element: <Home/>},
                     {path: "/home",element: <Home/>},

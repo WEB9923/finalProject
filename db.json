@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "email": "amikochixladze1234@gmail.com",
-      "password": "$2a$10$zLzqZscIBCHfRko1JiAhWuAzDW2r4gs9nQV/0CPAkiwwGCC8Ll5rm",
-      "username": "amiko",
-      "firstname": "asfas",
-      "lastname": "fag",
-      "phoneNumber": 523523,
-      "confirm": "Sumamed250",
+      "email": "test@gmail.com",
+      "password": "$2a$10$nMNlU4ifrvdR2dgPJEf7dO2jMJ86sBuZX/DdSJRUJaK8fIdacgeKy",
+      "username": "test",
+      "firstname": "test",
+      "lastname": "test1",
+      "phoneNumber": 431512,
+      "confirm": "Test1234",
       "id": 1
     }
   ],

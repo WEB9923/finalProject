@@ -40,6 +40,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.card .card-body .product-title a h1:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
 .card .card-body .product-desc {
   padding: 5px 0;
 }

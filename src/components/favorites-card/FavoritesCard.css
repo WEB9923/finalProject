@@ -32,6 +32,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.favorite-card .favorite-card-body .favorite-product-title a h3:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
 .favorite-card .favorite-card-footer {
   padding: 12px;
   border-top: 1px solid #e3e3ff;

@@ -6,7 +6,7 @@
   height: 150px;
   padding: 10px 15px;
   border-radius: $smallRadius;
-  background-color: $white;
+  background-color: $darkestWhite;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,9 +30,14 @@
       }
     }
     .cart-card-title-price{
-      h3{
-        color: $color;
+      user-select: none;
+      .cart-product-title{
+        color: $blue;
         font-weight: $boldWeight;
+        &:hover{
+          text-decoration: underline;
+          opacity: .7;
+        }
       }
       h4{
         color:$color;
@@ -47,27 +52,33 @@
         background-color: $bg;
         margin-top: 15px;
         max-width: 100px;
+        border-radius: $smallRadius;
         h3{
           flex: 1;
           text-align: center;
+          background-color: $bg;
         }
         button{
           width: 30px;
           height: 30px;
           @include flexAlignCenter();
           @include button();
-          background-color: $darkestWhite;
+          background-color: $bg;
+          color: $color;
           flex: 1;
           justify-content: center;
           svg{
             color: $color;
+          }
+          &:hover{
+            opacity: .6;
           }
         }
       }
     }
   }
   .cart-card-right-side{
-    button{
+    .delete-cart-product{
       @include button();
       width: 35px;
       height: 35px;
