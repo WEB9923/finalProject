@@ -8,11 +8,11 @@ import {useContext, useState} from "react";
 import {BsEye, BsEyeSlash} from "react-icons/bs";
 import {loginUser} from "../../services/Api.js";
 import userContext from "../../store/UserContext.jsx";
+import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
 
 export default function Login() {
     const [showPassword,setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     const context = useContext(userContext);
@@ -40,6 +40,7 @@ export default function Login() {
 
     async function onSubmit() {
         try {
+            SuccessToaster("Login Successfully");
             setIsLoading(true);
             const res = await loginUser(values);
             const token = res?.accessToken;
@@ -55,13 +56,11 @@ export default function Login() {
                 navigate("/");
             }
         } catch (err) {
-            setError(err.message);
+            ErrorToaster(err.message);
         } finally {
             setIsLoading(false);
         }
     }
-
-    if (error) return  console.log(error);
 
     return (
         <>

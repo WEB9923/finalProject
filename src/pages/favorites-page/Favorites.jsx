@@ -5,12 +5,12 @@ import Loader from "../../components/loader/Loader.jsx";
 import {DeleteProduct} from "../../services/DeleteProduct.js";
 import FavoritesCard from "../../components/favorites-card/FavoritesCard.jsx";
 import {useNavigate} from "react-router-dom";
+import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
 
 export default function Favorites() {
     const [favorites, setFavorites] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
-    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     const getFavoritesProduct = async () => {
@@ -21,8 +21,7 @@ export default function Favorites() {
                 setFavorites(res);
             }
         } catch (err) {
-            console.log(err)
-            setError(err)
+            ErrorToaster(err.message);
         } finally {
             setIsLoading(false);
         }
@@ -34,13 +33,14 @@ export default function Favorites() {
 
     const deleteFavoriteProduct = async (id) => {
         try {
+            SuccessToaster("Product deleted successfully");
             setIsDeleting(true);
             const res = await DeleteProduct("favorites", id);
             if (res) {
                 navigate(0);
             }
         } catch (err) {
-            console.log(err)
+            ErrorToaster(err.message);
         } finally {
             setIsDeleting(false);
         }
@@ -49,21 +49,23 @@ export default function Favorites() {
     return (
         <>
             <section className="favorites">
-                {isLoading ? <Loader/> : <div className="container">
+                <div className="container">
                     <h1>favorites</h1>
-                    <div className="favorites-wrapper">
-                        {favorites?.map((product) => (
-                            <FavoritesCard
-                                key={product.id}
-                                id={product.id}
-                                thumbnail={product.thumbnail}
-                                title={product.title}
-                                isDeleting={isDeleting}
-                                deleteFavoriteProduct={() => deleteFavoriteProduct(product.id)}
-                            />
-                        ))}
-                    </div>
-                </div>}
+                    {
+                        isLoading ? <Loader/> : <div className="favorites-wrapper">
+                            {favorites?.map((product) => (
+                                <FavoritesCard
+                                    key={product.id}
+                                    id={product.id}
+                                    thumbnail={product.thumbnail}
+                                    title={product.title}
+                                    isDeleting={isDeleting}
+                                    deleteFavoriteProduct={() => deleteFavoriteProduct(product.id)}
+                                />
+                            ))}
+                        </div>
+                    }
+                </div>
             </section>
         </>
     );

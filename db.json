@@ -1,16 +1,5 @@
 {
-  "users": [
-    {
-      "email": "test@gmail.com",
-      "password": "$2a$10$nMNlU4ifrvdR2dgPJEf7dO2jMJ86sBuZX/DdSJRUJaK8fIdacgeKy",
-      "username": "test",
-      "firstname": "test",
-      "lastname": "test1",
-      "phoneNumber": 431512,
-      "confirm": "Test1234",
-      "id": 1
-    }
-  ],
+  "users": [],
   "products": [
     {
       "id": 1,

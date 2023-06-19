@@ -7,8 +7,9 @@ import {useContext, useState} from "react";
 import {registerUser} from "../../services/Api.js";
 import SmallLoader from "../../components/small-loader/SmallLoader.jsx";
 import {BsEye, BsEyeSlash} from "react-icons/bs";
-import {toast} from "react-toastify";
 import userContext from "../../store/UserContext.jsx";
+import {SuccessToaster} from "../../components/toaster/Toaster.js";
+import {ErrorToaster} from "../../components/toaster/Toaster.js";
 
 
 export default function Register() {
@@ -51,6 +52,7 @@ export default function Register() {
 
     async function onSubmit() {
         try {
+            SuccessToaster("Register Successfully");
             setIsLoading(true);
             const res = await registerUser(values);
             const token = res?.accessToken;
@@ -66,24 +68,20 @@ export default function Register() {
                 navigate("/");
             }
         } catch (err) {
-            // console.log(err.message)
-            setError(err.message)
+            ErrorToaster(err.message);
         } finally {
             setIsLoading(false);
         }
     }
-
-    if(error)console.log(error) /// დალოგვით ილოგება სწორად მარტო მესიჯი //
-
-    if(error) {   /* გადადის ცარიელ გვერდზე და ვერ დავფიქსე... */
-        return (
-            toast.error(error,{
-                position:"top-right",
-                style:{backgroundColor:"#cecee6"}
-            })
-        )
-    }
-
+    /// ასე ამუშავდა ///
+    // if (error) {
+    //     ///როგორც მივხვდი return(არ მოსწონდა)///
+    //     toast.error(error, {
+    //         position: "bottom-left",
+    //         style: {backgroundColor: "#cecee6"}
+    //     })
+    //     setError("")
+    // }
     return (
         <>
             <section className="form-section">

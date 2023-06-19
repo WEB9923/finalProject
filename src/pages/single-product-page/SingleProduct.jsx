@@ -7,13 +7,13 @@ import SmallLoader from "../../components/small-loader/SmallLoader.jsx";
 import {FiHeart} from "react-icons/fi";
 import {RiShoppingCartLine} from "react-icons/ri";
 import Loader from "../../components/loader/Loader.jsx";
+import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
 
 export default function SingleProduct() {
     const {productId} = useParams();
 
     const [product, setProduct] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [error,setError] = useState(null);
     const [isAddCartLoading, setIsAddCartLoading] = useState(false);
     const [isAddFavoritesLoading, setIsAddFavoritesLoading] = useState(false);
 
@@ -23,23 +23,25 @@ export default function SingleProduct() {
             const res = await GetSingleProduct(productId);
             setProduct(res);
         } catch (err) {
-            console.log(err)
+            ErrorToaster(err.message);
         } finally {
             setIsLoading(false);
         }
     }
+
     useEffect(() => {
         fetchingData();
     }, []);
 
     const addToFavorites = async () => {
         try {
+            SuccessToaster("Favorites added Successfully");
             setIsAddFavoritesLoading(true);
             if (product) {
                 await AddCartOrFavorites("favorites", product);
             }
         } catch (err) {
-            console.log(err)
+            ErrorToaster(err.message);
         } finally {
             setIsAddFavoritesLoading(false);
         }
@@ -47,12 +49,13 @@ export default function SingleProduct() {
 
     const addToCart = async () => {
         try {
+            SuccessToaster("Cart added Successfully");
             setIsAddCartLoading(true);
             if (product) {
                 await AddCartOrFavorites("cart", product);
             }
         } catch (err) {
-            console.log(err)
+            ErrorToaster(err.message);
         } finally {
             setIsAddCartLoading(false);
         }

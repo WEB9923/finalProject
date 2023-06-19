@@ -7,6 +7,6 @@ export const GetSingleProduct = async (id) => {
         // console.log(res.data)
         return res.data;
     } catch (err) {
-        throw new Error(err);
+        throw new Error(err.response.data);
     }
 }

@@ -6,6 +6,6 @@ export const AddCartOrFavorites = async (destination, product) => {
         const res = await axios.post(`${BASE_URL}/${destination}`, product);
         return res.data;
     } catch (err) {
-        throw new Error(err.response.status);
+        throw new Error(err.response.data);
     }
 }

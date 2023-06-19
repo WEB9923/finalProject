@@ -7,6 +7,6 @@ export const GetCartAndFavoriteProducts = async (route) => {
         const res = await axios.get(`${BASE_URL}/${route}`);
         return res.data;
     } catch (err) {
-        throw new Error(err);
+        throw new Error(err.response.data);
     }
 }

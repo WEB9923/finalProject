@@ -7,11 +7,10 @@ import {useSearchParams} from "react-router-dom";
 import {BiCategoryAlt} from "react-icons/bi";
 import QueryParamsFilter from "../../components/query-params-filter/QueryParamsFilter.jsx";
 import Search from "../../components/search/Search.jsx";
-import Loader from "../../components/loader/Loader.jsx";
+import {ErrorToaster} from "../../components/toaster/Toaster.js";
 
 export default function Products() {
     const [list, setList] = useState([]);
-    const [error, setError] = useState(null);
     const [limit, setLimit] = useState(20);
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -48,7 +47,7 @@ export default function Products() {
             const data = await GetAllProducts(searchParams, limit);
             setList(data)
         } catch (err) {
-            setError(err)
+            ErrorToaster(err.message);
         } finally {
             setIsLoading(false);
         }
@@ -90,7 +89,7 @@ export default function Products() {
                         </button>
                     </div>
                     <div className="products-wrapper">
-                        {isLoading ? <Loader/> : list?.map((product) => (
+                        {list?.map((product) => (
                             <Card key={product.id} {...product}/>
                         ))}
                     </div>

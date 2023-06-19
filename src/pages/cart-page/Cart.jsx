@@ -5,14 +5,13 @@ import {GetCartAndFavoriteProducts} from "../../services/GetCartAndFavoriteProdu
 import {DeleteProduct} from "../../services/DeleteProduct.js";
 import Loader from "../../components/loader/Loader.jsx";
 import CartCard from "../../components/cart-card/CartCard.jsx";
+import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
 
 export default function Cart() {
     const [cart, setCart] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
-    const [error, setError] = useState(null);
     const navigate = useNavigate();
-
 
     const getCartProducts = async () => {
         try {
@@ -22,8 +21,7 @@ export default function Cart() {
                 setCart(res);
             }
         } catch (err) {
-            console.log(err)
-            setError(err)
+            ErrorToaster(err.message);
         } finally {
             setIsLoading(false);
         }
@@ -35,13 +33,14 @@ export default function Cart() {
 
     const deleteCartProduct = async (id) => {
         try {
+            SuccessToaster("delete product successfully");
             setIsDeleting(true);
             const res = await DeleteProduct("cart", id);
             if (res) {
                 navigate(0);
             }
         } catch (err) {
-            console.log(err)
+            ErrorToaster(err.message);
         } finally {
             setIsDeleting(false);
         }
@@ -50,22 +49,24 @@ export default function Cart() {
     return (
         <>
             <section className="cart-section">
-                {isLoading ? <Loader/> : <div className="container">
+                <div className="container">
                     <h1>cart</h1>
-                    <div className="cart-wrapper">
-                        {cart?.map((cartProduct) => (
-                            <CartCard
-                                key={cartProduct.id}
-                                id={cartProduct.id}
-                                thumbnail={cartProduct.thumbnail}
-                                title={cartProduct.title}
-                                price={cartProduct.price}
-                                isDeleting={isDeleting}
-                                deleteCartProduct={() => deleteCartProduct(cartProduct.id)}
-                            />
-                        ))}
-                    </div>
-                </div>}
+                    {
+                        isLoading ? <Loader/> : <div className="cart-wrapper">
+                            {cart?.map((cartProduct) => (
+                                <CartCard
+                                    key={cartProduct.id}
+                                    id={cartProduct.id}
+                                    thumbnail={cartProduct.thumbnail}
+                                    title={cartProduct.title}
+                                    price={cartProduct.price}
+                                    isDeleting={isDeleting}
+                                    deleteCartProduct={() => deleteCartProduct(cartProduct.id)}
+                                />
+                            ))}
+                        </div>
+                    }
+                </div>
             </section>
         </>
     );
