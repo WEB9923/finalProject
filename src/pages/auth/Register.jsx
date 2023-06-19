@@ -10,6 +10,7 @@ import {BsEye, BsEyeSlash} from "react-icons/bs";
 import userContext from "../../store/UserContext.jsx";
 import {SuccessToaster} from "../../components/toaster/Toaster.js";
 import {ErrorToaster} from "../../components/toaster/Toaster.js";
+import {motion} from "framer-motion";
 
 
 export default function Register() {
@@ -86,8 +87,12 @@ export default function Register() {
     // }
     return (
         <>
-            <section className="form-section">
-                <div className="container">
+            <section className="form-section" style={{overflow:"hidden"}}>
+                <motion.div className="container"
+                    initial={{scale:0}}
+                    animate={{scale:1}}
+                    transition={{type:"spring",stiffness: 100}}
+                >
                     <div className="form-image">
                         <img src={RegisterImage} alt=""/>
                     </div>
@@ -180,7 +185,7 @@ export default function Register() {
                             </div>
                         </div>
                     </form>
-                </div>
+                </motion.div>
             </section>
         </>
     );

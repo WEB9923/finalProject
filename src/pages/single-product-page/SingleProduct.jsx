@@ -9,6 +9,7 @@ import {RiShoppingCartLine} from "react-icons/ri";
 import Loader from "../../components/loader/Loader.jsx";
 import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
 
+
 export default function SingleProduct() {
     const {productId} = useParams();
 

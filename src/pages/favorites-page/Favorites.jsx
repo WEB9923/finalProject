@@ -6,6 +6,19 @@ import {DeleteProduct} from "../../services/DeleteProduct.js";
 import FavoritesCard from "../../components/favorites-card/FavoritesCard.jsx";
 import {useNavigate} from "react-router-dom";
 import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
+import {motion} from "framer-motion";
+
+const text = {
+    hidden:{
+        opacity:0,
+        x:"-50vw",
+    },
+    show:{
+        opacity: 1,
+        x:0,
+        transition:{type:"spring",delay:0.1,stiffness:100}
+    }
+}
 
 export default function Favorites() {
     const [favorites, setFavorites] = useState([]);
@@ -50,7 +63,13 @@ export default function Favorites() {
         <>
             <section className="favorites">
                 <div className="container">
-                    <h1>favorites</h1>
+                    <motion.h1 style={{width:"fit-content"}}
+                        variants={text}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        favorites
+                    </motion.h1>
                     {
                         isLoading ? <Loader/> : <div className="favorites-wrapper">
                             {favorites?.map((product) => (

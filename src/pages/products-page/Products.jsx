@@ -8,6 +8,20 @@ import {BiCategoryAlt} from "react-icons/bi";
 import QueryParamsFilter from "../../components/query-params-filter/QueryParamsFilter.jsx";
 import Search from "../../components/search/Search.jsx";
 import {ErrorToaster} from "../../components/toaster/Toaster.js";
+import {motion} from "framer-motion";
+
+const text = {
+    hidden:{
+        opacity:0,
+        x:"-50vw",
+    },
+    show:{
+        opacity: 1,
+        x:0,
+        transition:{type:"spring",delay:0.1,stiffness:100}
+    }
+}
+
 
 export default function Products() {
     const [list, setList] = useState([]);
@@ -74,7 +88,13 @@ export default function Products() {
                     />
                 }
                 <div className="container">
-                    <h1>products</h1>
+                    <motion.h1 style={{width:"fit-content"}}
+                        variants={text}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        products
+                    </motion.h1>
                     <Search
                         inputRef={inputRef}
                         inputVal={inputVal}

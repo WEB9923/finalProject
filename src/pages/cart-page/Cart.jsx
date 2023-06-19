@@ -6,6 +6,19 @@ import {DeleteProduct} from "../../services/DeleteProduct.js";
 import Loader from "../../components/loader/Loader.jsx";
 import CartCard from "../../components/cart-card/CartCard.jsx";
 import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
+import {motion} from "framer-motion";
+
+const text = {
+    hidden:{
+        opacity:0,
+        x:"-50vw",
+    },
+    show:{
+        opacity: 1,
+        x:0,
+        transition:{type:"spring",delay:0.1,stiffness:100}
+    }
+}
 
 export default function Cart() {
     const [cart, setCart] = useState([]);
@@ -50,7 +63,13 @@ export default function Cart() {
         <>
             <section className="cart-section">
                 <div className="container">
-                    <h1>cart</h1>
+                    <motion.h1 style={{width:"fit-content"}}
+                        variants={text}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        cart
+                    </motion.h1>
                     {
                         isLoading ? <Loader/> : <div className="cart-wrapper">
                             {cart?.map((cartProduct) => (

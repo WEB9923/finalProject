@@ -11,8 +11,9 @@ body{font-family:"Poppins",sans-serif;background-color: $bg;}
 ::-webkit-scrollbar-thumb{background-color:$darkestBlue;}
 ::selection{background-color:$darkestBlue;color:$white;}
 ::placeholder{color:$color;}
-section{padding:60px 0;min-height: 350px;position: relative;}
+section{padding:60px 0;min-height: 450px;position: relative;}
 a{&:active{color: $blue;}}
 //global added classes
 .touchedActive{opacity: .6;box-shadow: $shadow;scale: .92;}
+.progress{position: fixed;top: 0;left: 0;right:0;background-color: $darkestBlue;height: 8px;transform-origin: 0;z-index: 999999999999;}
 

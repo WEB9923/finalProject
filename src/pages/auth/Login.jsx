@@ -9,6 +9,7 @@ import {BsEye, BsEyeSlash} from "react-icons/bs";
 import {loginUser} from "../../services/Api.js";
 import userContext from "../../store/UserContext.jsx";
 import {ErrorToaster, SuccessToaster} from "../../components/toaster/Toaster.js";
+import {motion} from "framer-motion";
 
 export default function Login() {
     const [showPassword,setShowPassword] = useState(false);
@@ -66,8 +67,12 @@ export default function Login() {
 
     return (
         <>
-            <section className="form-section">
-                <div className="container">
+            <section className="form-section" style={{overflow:"hidden"}}>
+                <motion.div className="container"
+                    initial={{scale:0}}
+                    animate={{scale:1}}
+                    transition={{type:"spring",stiffness: 100}}
+                >
                     <div className="form-image">
                         <img src={LoginImage} alt=""/>
                     </div>
@@ -108,7 +113,7 @@ export default function Login() {
                             </div>
                         </div>
                     </form>
-                </div>
+                </motion.div>
             </section>
         </>
     );

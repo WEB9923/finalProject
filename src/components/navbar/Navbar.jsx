@@ -32,12 +32,12 @@ export default function Navbar() {
                     <div className="right-side">
                         <ul className={`nav-links ${showMobileNavbar && "show-mobile-navbar"}`}>
                             <li className="nav-link-li">
-                                <NavLink to={"/"} className="nav-link">
+                                <NavLink to={"/"} className="nav-link" onClick={() => setShowMobileNavbar(false)}>
                                     home
                                 </NavLink>
                             </li>
                             <li className="nav-link-li">
-                                <NavLink to={"/products"} className="nav-link">
+                                <NavLink to={"/products"} className="nav-link" onClick={() => setShowMobileNavbar(false)}>
                                     products
                                 </NavLink>
                             </li>
@@ -54,7 +54,8 @@ export default function Navbar() {
                             {/* USER DETAILS AFTER CLICK NAVBAR SHOW MORE INFO BTN*/}
                             {showProfileDetailsMenu &&
                                 <ProfileDetails
-                                    username={"name lastname"}/>}
+                                    setShowProfileDetailsMenu={setShowProfileDetailsMenu}
+                                />}
                             <button className={`burger ${showMobileNavbar && "touchedActive"}`} onClick={handleShowMobileNavbar}>
                                 <HiOutlineBars3BottomRight size={25}/>
                             </button>
