@@ -33,10 +33,10 @@ export default function Favorites() {
 
     const deleteFavoriteProduct = async (id) => {
         try {
-            SuccessToaster("Product deleted successfully");
             setIsDeleting(true);
             const res = await DeleteProduct("favorites", id);
             if (res) {
+                SuccessToaster("Product deleted successfully");
                 navigate(0);
             }
         } catch (err) {

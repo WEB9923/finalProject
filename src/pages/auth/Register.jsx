@@ -52,7 +52,6 @@ export default function Register() {
 
     async function onSubmit() {
         try {
-            SuccessToaster("Register Successfully");
             setIsLoading(true);
             const res = await registerUser(values);
             const token = res?.accessToken;
@@ -66,6 +65,9 @@ export default function Register() {
                 localStorage.setItem("token", token);
                 localStorage.setItem("user", JSON.stringify(user));
                 navigate("/");
+            }
+            if(res){
+                SuccessToaster("Register Successfully");
             }
         } catch (err) {
             ErrorToaster(err.message);

@@ -35,10 +35,12 @@ export default function SingleProduct() {
 
     const addToFavorites = async () => {
         try {
-            SuccessToaster("Favorites added Successfully");
             setIsAddFavoritesLoading(true);
             if (product) {
-                await AddCartOrFavorites("favorites", product);
+                const res = await AddCartOrFavorites("favorites", product);
+                if(res){
+                    SuccessToaster("Favorites added Successfully");
+                }
             }
         } catch (err) {
             ErrorToaster(err.message);
@@ -49,10 +51,12 @@ export default function SingleProduct() {
 
     const addToCart = async () => {
         try {
-            SuccessToaster("Cart added Successfully");
             setIsAddCartLoading(true);
             if (product) {
-                await AddCartOrFavorites("cart", product);
+                const res = await AddCartOrFavorites("cart", product);
+                if(res){
+                    SuccessToaster("Cart added Successfully");
+                }
             }
         } catch (err) {
             ErrorToaster(err.message);

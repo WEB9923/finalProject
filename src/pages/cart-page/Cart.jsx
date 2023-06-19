@@ -33,10 +33,10 @@ export default function Cart() {
 
     const deleteCartProduct = async (id) => {
         try {
-            SuccessToaster("delete product successfully");
             setIsDeleting(true);
             const res = await DeleteProduct("cart", id);
             if (res) {
+                SuccessToaster("Product deleted successfully");
                 navigate(0);
             }
         } catch (err) {

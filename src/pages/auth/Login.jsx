@@ -40,7 +40,6 @@ export default function Login() {
 
     async function onSubmit() {
         try {
-            SuccessToaster("Login Successfully");
             setIsLoading(true);
             const res = await loginUser(values);
             const token = res?.accessToken;
@@ -54,6 +53,9 @@ export default function Login() {
                 localStorage.setItem("token",token);
                 localStorage.setItem("user", JSON.stringify(user));
                 navigate("/");
+            }
+            if(res){
+                SuccessToaster("Login Successfully");
             }
         } catch (err) {
             ErrorToaster(err.message);
