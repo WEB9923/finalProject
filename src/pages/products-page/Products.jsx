@@ -18,7 +18,7 @@ const text = {
     show:{
         opacity: 1,
         x:0,
-        transition:{type:"spring",delay:0.1,stiffness:100}
+        transition:{type:"spring",stiffness:100}
     }
 }
 
