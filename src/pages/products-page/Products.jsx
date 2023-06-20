@@ -26,6 +26,7 @@ const text = {
 export default function Products() {
     const [list, setList] = useState([]);
     const [limit, setLimit] = useState(20);
+    const [xTotalCount,setXtotalCount] = useState(0);
 
     const [searchParams, setSearchParams] = useSearchParams();
     const [inputVal, setInputVal] = useState("");
@@ -59,7 +60,8 @@ export default function Products() {
         try {
             setIsLoading(true);
             const data = await GetAllProducts(searchParams, limit);
-            setList(data)
+            setList(data.products)
+            setXtotalCount(parseInt(data.totalCount));
         } catch (err) {
             ErrorToaster(err.message);
         } finally {
@@ -74,7 +76,9 @@ export default function Products() {
     const handleLoadMoreProduct = () => {
         setLimit(limit + 20)
     }
-
+    console.log("limit->",limit)
+    console.log("total->",xTotalCount)
+    console.log(limit === xTotalCount)
     return (
         <>
             <section className="products">
@@ -115,8 +119,8 @@ export default function Products() {
                     </div>
                     <LoadMoreBtn
                         handleLoadMoreProduct={handleLoadMoreProduct}
-                        textContent={`${list.limit === limit ? "no more data" : "load more"}`}
-                        disabled={list.limit === limit}
+                        textContent={`${limit === xTotalCount ? "no more data" : "load more"}`}
+                        disabled={limit === xTotalCount}
                         loading={isLoading}
                     />
                 </div>
