@@ -1,0 +1,35 @@
+.draggable .container {
+  max-width: 1250px;
+  width: 100%;
+  margin: auto;
+  padding: 0 10px;
+}
+@media screen and (max-width: 850px) {
+  .draggable .container {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .draggable .container {
+    padding: 0 15px;
+  }
+}
+.draggable .container h1 {
+  text-transform: capitalize;
+  color: #5c5a5a;
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.draggable .container .draggable-wrapper {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.draggable .container .draggable-wrapper .draggable-carousel {
+  display: flex;
+  cursor: grab;
+  width: 100%;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=Draggable.css.map */

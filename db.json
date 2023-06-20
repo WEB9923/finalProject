@@ -1,5 +1,16 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$ct5VadrAxwLEfpMPJtRnreMxJYlu.BXMa190ohgY3twc8z8k9NOxu",
+      "username": "test",
+      "firstname": "test",
+      "lastname": "test",
+      "phoneNumber": 571063239,
+      "confirm": "Test1234",
+      "id": 1
+    }
+  ],
   "products": [
     {
       "id": 1,
