@@ -98,5 +98,22 @@
         }
       }
     }
+    @media screen and (max-width: 1000px){
+      flex-direction: column;
+      .single-product-image{
+        width: 60%;
+        margin: auto;
+      }
+      .single-product-details{
+        width: 100%;
+        padding: 20px ;
+      }
+    }
+    @media screen and (max-width: 650px){
+      .single-product-image{
+        width: 100%;
+        margin: auto;
+      }
+    }
   }
 }

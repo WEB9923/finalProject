@@ -1,6 +1,6 @@
 import "./Draggable.scss";
 import {motion} from "framer-motion";
-import {TopBrandData} from "../../pages/home-page/TopBrandData.js";
+import {TopBrandData} from "./TopBrandData.js";
 import DraggableElement from "../draggable-element/DraggableElement.jsx";
 import {useEffect, useRef, useState} from "react";
 

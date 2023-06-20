@@ -116,5 +116,24 @@
   text-transform: capitalize;
   outline: none;
 }
+@media screen and (max-width: 1000px) {
+  .single-product .container {
+    flex-direction: column;
+  }
+  .single-product .container .single-product-image {
+    width: 60%;
+    margin: auto;
+  }
+  .single-product .container .single-product-details {
+    width: 100%;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .single-product .container .single-product-image {
+    width: 100%;
+    margin: auto;
+  }
+}
 
 /*# sourceMappingURL=SingleProduct.css.map */
