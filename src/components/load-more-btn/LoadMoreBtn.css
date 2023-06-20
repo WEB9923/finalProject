@@ -1,5 +1,5 @@
 .load-more-btn {
-  min-width: 100px;
+  min-width: 130px;
   height: 50px;
   background-color: #517cd1;
   color: #e3e3ff;
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
-  padding: 0 10px;
+  padding: 0 15px;
   margin: auto;
 }
 .load-more-btn:disabled {
