@@ -76,9 +76,14 @@ export default function Products() {
     const handleLoadMoreProduct = () => {
         setLimit(limit + 20)
     }
-    console.log("limit->",limit)
-    console.log("total->",xTotalCount)
-    console.log(limit === xTotalCount)
+
+
+    console.log(
+        "limit->",limit,
+        "total->",xTotalCount,
+        limit === xTotalCount
+    )
+
     return (
         <>
             <section className="products">

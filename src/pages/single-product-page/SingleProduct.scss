@@ -52,6 +52,10 @@
               font-weight: $boldWeight;
               margin-left: 5px;
               user-select: none;
+              &:hover{
+                opacity: .7;
+                text-decoration: underline;
+              }
             }
           }
         }
