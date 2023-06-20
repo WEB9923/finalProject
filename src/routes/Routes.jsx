@@ -10,11 +10,13 @@ import SingleProduct from "../pages/single-product-page/SingleProduct.jsx";
 import Favorites from "../pages/favorites-page/Favorites.jsx";
 import Cart from "../pages/cart-page/Cart.jsx";
 import {JWTdecoder} from "../utils/JWTdecoder.js";
+import Error404 from "../pages/404/Error404.jsx";
 
 const Routes = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
+        errorElement:<Error404/>,
         children: [
             {
                 path: "/auth",
