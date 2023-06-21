@@ -27,6 +27,7 @@
 }
 .form-section .container .form-image {
   width: 45%;
+  pointer-events: none;
 }
 .form-section .container .form-image img {
   width: 100%;
