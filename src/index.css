@@ -58,4 +58,12 @@ a:active {
   z-index: 999999999999;
 }
 
+@media screen and (max-width: 480px) {
+  .Toastify__toast-container--bottom-left {
+    width: 312px !important;
+    left: 1em !important;
+    bottom: 1em !important;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

@@ -16,4 +16,8 @@ a{&:active{color: $blue;}}
 //global added classes
 .touchedActive{opacity: .6;box-shadow: $shadow;scale: .92;}
 .progress{position: fixed;top: 0;left: 0;right:0;background-color: $darkestBlue;height: 8px;transform-origin: 0;z-index: 999999999999;}
-
+.Toastify__toast-container--bottom-left{@media screen and (max-width: 480px){
+    width: 312px !important;
+    left: 1em !important;
+    bottom: 1em !important;
+}}

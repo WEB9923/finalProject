@@ -6,6 +6,7 @@ export function SuccessToaster(message) {
         position: "bottom-left",
         style: {backgroundColor: "#cecee6",color:"#92b84e",fontWeight:"700"},
         progressStyle:{backgroundColor:"#92b84e"},
+        draggable:false,
         delay:0
     });
 }
@@ -16,6 +17,7 @@ export function ErrorToaster(message) {
         position: "bottom-left",
         style: {backgroundColor: "#cecee6",color:"#d95a5a",fontWeight:"700"},
         progressStyle:{backgroundColor:"#d95a5a"},
+        draggable:false,
         delay:0
     });
 }
