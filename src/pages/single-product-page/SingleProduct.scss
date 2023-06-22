@@ -2,122 +2,137 @@
 @import "../../styles/Mixins";
 
 
-.single-product{
-  .container{
-    @include container();
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 15px;
-    min-height: 50vh;
-    .single-product-image{
-      width: 40%;
-      height: 500px;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+.single-product {
+   .container {
+      @include container();
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 15px;
+      min-height: 50vh;
+
+      .single-product-image {
+         width: 40%;
+         height: 500px;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
       }
-    }
-    .single-product-details{
-      width: 50%;
-      background-color: $darkestWhite;
-      padding: 5px 20px;
-      border-radius: $smallRadius;
-      div:not(:first-child){
-        margin-top: 15px;
-      }
-      div{
-        .title{
-          font-weight: $extraBoldWeight;
-          font-size: $extra;
-          @include lineClamp2();
-        }
-        h1,h2,h4,p{
-          color: $color;
-          font-weight: $mediumWeight;
-          text-transform: capitalize;
-          @if(span){
-            span{
-              color: $darkestBlue;
-              font-weight: $boldWeight;
-              margin-left: 5px;
-              user-select: none;
+
+      .single-product-details {
+         width: 50%;
+         background-color: $darkestWhite;
+         padding: 5px 20px;
+         border-radius: $smallRadius;
+
+         div:not(:first-child) {
+            margin-top: 15px;
+         }
+
+         div {
+            .title {
+               font-weight: $extraBoldWeight;
+               font-size: $extra;
+               @include lineClamp2();
             }
-          }
-          @if(a){
-            a{
-              color: $blue;
-              cursor: pointer;
-              font-weight: $boldWeight;
-              margin-left: 5px;
-              user-select: none;
-              &:hover{
-                opacity: .7;
-                text-decoration: underline;
-              }
+
+            h1, h2, h4, p {
+               color: $color;
+               font-weight: $mediumWeight;
+               text-transform: capitalize;
+               @if (span) {
+                  span {
+                     color: $darkestBlue;
+                     font-weight: $boldWeight;
+                     margin-left: 5px;
+                     user-select: none;
+                  }
+               }
+               @if (a) {
+                  a {
+                     color: $blue;
+                     cursor: pointer;
+                     font-weight: $boldWeight;
+                     margin-left: 5px;
+                     user-select: none;
+
+                     &:hover {
+                        opacity: .7;
+                        text-decoration: underline;
+                     }
+                  }
+               }
             }
-          }
-        }
-        p{
-          display: -webkit-box;
-          -webkit-box-orient: horizontal;
-          line-clamp: 5;
-          -webkit-line-clamp: 5;
-          font-weight: $mediumWeight;
-          color: $color;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+
+            p {
+               display: -webkit-box;
+               -webkit-box-orient: horizontal;
+               line-clamp: 5;
+               -webkit-line-clamp: 5;
+               font-weight: $mediumWeight;
+               color: $color;
+               overflow: hidden;
+               text-overflow: ellipsis;
+            }
+         }
+
+         .desc {
+            margin-top: 20px !important;
+         }
+
+         .buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px !important;
+
+            button {
+               @include button();
+               padding: 10px 18px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               font-weight: $mediumWeight;
+               color: $bg;
+               font-size: $medium;
+               transition: .3s ease;
+               gap: 3px;
+
+               &:hover {
+                  scale: .95;
+               }
+            }
+
+            .add-cart {
+               background-color: $darkestBlue;
+            }
+
+            .add-favorites {
+               background-color: $blue;
+               @include button();
+            }
+         }
       }
-      .desc{
-        margin-top: 20px !important;
+
+      @media screen and (max-width: 1000px) {
+         flex-direction: column;
+         .single-product-image {
+            width: 60%;
+            margin: auto;
+         }
+         .single-product-details {
+            width: 100%;
+            padding: 20px;
+         }
       }
-      .buttons{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-top: 30px !important;
-        button{
-          @include button();
-          padding: 10px 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: $mediumWeight;
-          color: $bg;
-          font-size: $medium;
-          transition: .3s ease;
-          gap: 3px;
-          &:hover{
-            scale: .95;
-          }
-        }
-        .add-cart{
-          background-color: $darkestBlue;
-        }
-        .add-favorites{
-          background-color: $blue;
-          @include button();
-        }
+      @media screen and (max-width: 650px) {
+         .single-product-image {
+            width: 100%;
+            margin: auto;
+         }
       }
-    }
-    @media screen and (max-width: 1000px){
-      flex-direction: column;
-      .single-product-image{
-        width: 60%;
-        margin: auto;
-      }
-      .single-product-details{
-        width: 100%;
-        padding: 20px ;
-      }
-    }
-    @media screen and (max-width: 650px){
-      .single-product-image{
-        width: 100%;
-        margin: auto;
-      }
-    }
-  }
+   }
 }

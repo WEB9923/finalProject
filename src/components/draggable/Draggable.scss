@@ -2,25 +2,28 @@
 @import "../../styles/Mixins";
 
 
-.draggable{
-  .container{
-    @include container();
-    h1{
-      text-transform: capitalize;
-      color: $color;
-      font-weight: $extraBoldWeight;
-      font-size: $extra;
-      margin-bottom: 20px;
-    }
-    .draggable-wrapper{
-      margin-top: 10px;
-      overflow: hidden;
-      .draggable-carousel{
-        display: flex;
-        cursor: grab;
-        width: 100%;
-        gap: 15px;
+.draggable {
+   .container {
+      @include container();
+
+      h1 {
+         text-transform: capitalize;
+         color: $color;
+         font-weight: $extraBoldWeight;
+         font-size: $extra;
+         margin-bottom: 20px;
       }
-    }
-  }
+
+      .draggable-wrapper {
+         margin-top: 10px;
+         overflow: hidden;
+
+         .draggable-carousel {
+            display: flex;
+            cursor: grab;
+            width: 100%;
+            gap: 15px;
+         }
+      }
+   }
 }

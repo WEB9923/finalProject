@@ -2,20 +2,22 @@
 @import "../../styles/Mixins";
 
 
-.favorites{
-  .container{
-    @include container();
-    h1{
-      text-transform: capitalize;
-      color: $color;
-      font-weight: $extraBoldWeight;
-      font-size: $extra;
-      margin-bottom: 20px;
-    }
-    .favorites-wrapper{
-      @include flexWrapper();
-      justify-content: center;
-      margin-top: 30px;
-    }
-  }
+.favorites {
+   .container {
+      @include container();
+
+      h1 {
+         text-transform: capitalize;
+         color: $color;
+         font-weight: $extraBoldWeight;
+         font-size: $extra;
+         margin-bottom: 20px;
+      }
+
+      .favorites-wrapper {
+         @include flexWrapper();
+         justify-content: center;
+         margin-top: 30px;
+      }
+   }
 }

@@ -1,107 +1,116 @@
 @import "./Variables.scss";
 ///** container **///
 @mixin container {
-  max-width: 1250px;
-  width: 100%;
-  margin: auto;
-  padding: 0 10px;
-  @media screen and (max-width: 850px){
-    padding: 0 20px;
-  }
-  @media screen and (max-width: 550px){
-    padding: 0 15px;
-  }
+   max-width: 1250px;
+   width: 100%;
+   margin: auto;
+   padding: 0 10px;
+   @media screen and (max-width: 850px) {
+      padding: 0 20px;
+   }
+   @media screen and (max-width: 550px) {
+      padding: 0 15px;
+   }
 }
+
 ///** bordered button **///
 @mixin borderedButton {
-  border-width: 3px;
-  background-color: transparent;
-  cursor: pointer;
-  outline: none;
-  border-radius: $smallRadius;
-  transition: all .2s ease;
-  text-transform: capitalize;
+   border-width: 3px;
+   background-color: transparent;
+   cursor: pointer;
+   outline: none;
+   border-radius: $smallRadius;
+   transition: all .2s ease;
+   text-transform: capitalize;
 }
+
 ///** non border, bg button **///
 @mixin button {
-  cursor: pointer;
-  transition: all .2s ease;
-  border-radius: $smallRadius;
-  border: none;
-  text-transform: capitalize;
-  outline: none;
+   cursor: pointer;
+   transition: all .2s ease;
+   border-radius: $smallRadius;
+   border: none;
+   text-transform: capitalize;
+   outline: none;
 }
+
 ///** flex wrapper **///
 @mixin flexWrapper {
-  display: flex;
-  justify-content: stretch;
-  flex-wrap: wrap;
-  gap: 30px;
+   display: flex;
+   justify-content: stretch;
+   flex-wrap: wrap;
+   gap: 30px;
 }
+
 ///**  flex between **///
 @mixin flexAlignCenter {
-  display: flex;
-  align-items: center;
+   display: flex;
+   align-items: center;
 }
+
 ///**  flex col **///
 @mixin flexCol {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
 }
+
 ///** line clamp 1 **///
 @mixin lineClamp1 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   line-clamp: 1;
+   -webkit-line-clamp: 1;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
+
 ///** line clamp 2 **///
 @mixin lineClamp2 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 2;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   line-clamp: 2;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
+
 ///** form **///
-@mixin form{
-  width: 500px;
-  height: auto;
-  min-height: 350px;
-  padding: 20px 15px;
-  background-color: $darkestWhite;
-  box-shadow: $shadow;
-  border-radius: $mediumRadius;
-  @media screen and (max-width: 550px){
-    width: 90%;
-  }
-  @media screen and (max-width: 400px){
-    width: 100%;
-  }
+@mixin form {
+   width: 500px;
+   height: auto;
+   min-height: 350px;
+   padding: 20px 15px;
+   background-color: $darkestWhite;
+   box-shadow: $shadow;
+   border-radius: $mediumRadius;
+   @media screen and (max-width: 550px) {
+      width: 90%;
+   }
+   @media screen and (max-width: 400px) {
+      width: 100%;
+   }
 }
+
 ///** input **///
 @mixin input {
-  width: 100%;
-  height: 45px;
-  border-radius: $smallRadius;
-  border: 3px solid transparent;
-  outline: none;
-  background-color: $bg;
-  padding-inline: 10px;
-  font-size: $medium;
-  color:$color;
-  font-weight: $regularWeight;
-  transition: all .3s ease;
-  &:focus{
-    border: 3px solid $darkestBlue;
-  }
-  &.input-error{
-    border: 3px solid $error;
-  }
+   width: 100%;
+   height: 45px;
+   border-radius: $smallRadius;
+   border: 3px solid transparent;
+   outline: none;
+   background-color: $bg;
+   padding-inline: 10px;
+   font-size: $medium;
+   color: $color;
+   font-weight: $regularWeight;
+   transition: all .3s ease;
+   &:focus {
+      border: 3px solid $darkestBlue;
+   }
+   &.input-error {
+      border: 3px solid $error;
+   }
 }
 
 

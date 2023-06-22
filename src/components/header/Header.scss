@@ -2,68 +2,79 @@
 @import "../../styles/Mixins";
 
 
-.header{
-  height: calc(100vh - 90px);
-  .container{
-    @include container();
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    overflow: hidden;
-    .left-side{
-      width: 40%;
-      animation: left 1s ease;
-      .header-title{
-        color: $color;
-        text-transform: capitalize;
-        font-weight: $boldWeight;
-      }
-      .header-text{
-        color: $color;
-        text-transform: capitalize;
-        font-weight: $mediumWeight;
-        margin-top: 15px;
-      }
-    }
-    .right-side{
-      width: 60%;
-      animation: right 1s ease;
-      pointer-events: none;
-      img{
-        width: 100%;
-      }
-    }
-    @media screen and (max-width: 850px){
-      @include flexCol();
-      justify-content: center;
+.header {
+   height: calc(100vh - 90px);
+
+   .container {
+      @include container();
+      height: 100%;
+      display: flex;
       align-items: center;
-      .left-side{
-        width: 100%;
+      justify-content: space-between;
+      gap: 40px;
+      overflow: hidden;
+
+      .left-side {
+         width: 40%;
+         animation: left 1s ease;
+
+         .header-title {
+            color: $color;
+            text-transform: capitalize;
+            font-weight: $boldWeight;
+         }
+
+         .header-text {
+            color: $color;
+            text-transform: capitalize;
+            font-weight: $mediumWeight;
+            margin-top: 15px;
+         }
       }
-      .right-side{
-        width: 80%;
+
+      .right-side {
+         width: 60%;
+         animation: right 1s ease;
+         pointer-events: none;
+
+         img {
+            width: 100%;
+         }
       }
-    }
-    @media screen and (max-width: 550px){
-      .right-side{
-        width: 100%;
+
+      @media screen and (max-width: 850px) {
+         @include flexCol();
+         justify-content: center;
+         align-items: center;
+         .left-side {
+            width: 100%;
+         }
+         .right-side {
+            width: 80%;
+         }
       }
-    }
-  }
+      @media screen and (max-width: 550px) {
+         .right-side {
+            width: 100%;
+         }
+      }
+   }
 }
 
 @keyframes right {
-  from{
-    transform: translate(100px,100px)
-  }
-  to{transform: translate(0,0)}
+   from {
+      transform: translate(100px, 100px)
+   }
+   to {
+      transform: translate(0, 0)
+   }
 }
 
 @keyframes left {
-  from{
-    transform: translate(-100px,-100px)
-  }
-  to{transform: translate(0,0)}
+   from {
+      transform: translate(-100px, -100px)
+   }
+   to {
+      transform: translate(0, 0)
+   }
 }

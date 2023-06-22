@@ -4,14 +4,14 @@ import Footer from "../components/footer/Footer.jsx";
 import {motion, useScroll} from "framer-motion";
 
 export default function Layout() {
-    const {scrollYProgress} = useScroll();
+   const {scrollYProgress} = useScroll();
 
-    return (
-        <>
-            <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
-            <Navbar/>
-            <Outlet/>
-            <Footer/>
-        </>
-    );
+   return (
+      <>
+         <motion.div className="progress" style={{scaleX: scrollYProgress}}/>
+         <Navbar/>
+         <Outlet/>
+         <Footer/>
+      </>
+   );
 }

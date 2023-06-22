@@ -4,11 +4,11 @@ import DraggableElement from "../../components/draggable-element/DraggableElemen
 import {TopBrandData} from "../../components/draggable/TopBrandData.js";
 
 export default function Home() {
-    return (
-        <>
-            <Header/>
-            <Draggable/>
-        </>
-    );
+   return (
+      <>
+         <Header/>
+         <Draggable/>
+      </>
+   );
 }
 

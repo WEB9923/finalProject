@@ -2,143 +2,168 @@
 @import "../../styles/Mixins";
 
 nav {
-  width: 100%;
-  height: 90px;
-  background-color: $darkestWhite;
-  z-index: 999;
-  .container {
-    @include container();
-    height: 100%;
-    @include flexAlignCenter();
-    justify-content: space-between;
-    position: relative;
-    .logo{
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      font-weight: $extraBoldWeight;
-      color: $blue;
-      img {
-        width: 60px;
-      }
-      h1{
-        font-size: $extra;
-        text-transform: capitalize;
-      }
-      @media screen and (max-width: 550px){
-        img{
-          width: 50px;
-        }
-        h1{
-          font-size: calc($extra - 5px);
-        }
-      }
-    }
-    .right-side{
+   width: 100%;
+   height: 90px;
+   background-color: $darkestWhite;
+   z-index: 999;
+
+   .container {
+      @include container();
+      height: 100%;
       @include flexAlignCenter();
-      gap: 40px;
-      .nav-links{
-        @include flexAlignCenter();
-        gap: 25px;
-        .nav-link-li{
-          .nav-link{
+      justify-content: space-between;
+      position: relative;
+
+      .logo {
+         display: flex;
+         align-items: center;
+         gap: 3px;
+         font-weight: $extraBoldWeight;
+         color: $blue;
+
+         img {
+            width: 60px;
+         }
+
+         h1 {
+            font-size: $extra;
             text-transform: capitalize;
-            font-weight: $boldWeight;
-            color:$color;
-            font-size: calc($medium + 1.5px);
-            &.active{
-              color: $blue;
-              font-weight: $boldWeight;
+         }
+
+         @media screen and (max-width: 550px) {
+            img {
+               width: 50px;
             }
-            &:hover{
-              opacity: .6;
+            h1 {
+               font-size: calc($extra - 5px);
             }
-          }
-        }
-        @media screen and (max-width: 750px){
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          height: auto;
-          padding: 30px 20px;
-          z-index: 9999;
-          box-shadow: $shadow;
-          background-color: $darkestWhite;
-          border-top: 1px solid $bg;
-          @include flexCol();
-          align-items: center;
-          justify-content: flex-start;
-          text-align: start;
-          display: none;
-          animation: showMobileNavbar .4s ease;
-          &.show-mobile-navbar{
-            display: flex;
-          }
-        }
+         }
       }
-      .cart_profile{
-        @include flexAlignCenter();
-        //position: relative;
-        gap: 20px;
-        .cart{
-          cursor: pointer;
-          transition: .3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          svg{
-            color: $color;
-          }
-          &:hover{
-            opacity: .6;
-          }
-          &.active svg{
-            color: $blue;
-          }
-        }
-        .profile{
-          @include button();
-          padding: 8px 10px;
-          @include flexAlignCenter();
-          gap: 5px;
-          background-color: $bg;
-          transition: .3s ease;
-          svg{
-            color: $color;
-          }
-          &:hover{
-            opacity: .6;
-          }
-        }
-        .burger{
-          @include button();
-          padding: 8px 10px;
-          @include flexAlignCenter();
-          gap: 5px;
-          background-color: $bg;
-          transition: .3s ease;
-          display: none;
-          svg{
-            color: $color;
-          }
-          &:hover{
-            opacity: .6;
-          }
-          @media screen and (max-width: 750px){display: flex;}
-        }
+
+      .right-side {
+         @include flexAlignCenter();
+         gap: 40px;
+
+         .nav-links {
+            @include flexAlignCenter();
+            gap: 25px;
+
+            .nav-link-li {
+               .nav-link {
+                  text-transform: capitalize;
+                  font-weight: $boldWeight;
+                  color: $color;
+                  font-size: calc($medium + 1.5px);
+
+                  &.active {
+                     color: $blue;
+                     font-weight: $boldWeight;
+                  }
+
+                  &:hover {
+                     opacity: .6;
+                  }
+               }
+            }
+
+            @media screen and (max-width: 750px) {
+               position: absolute;
+               top: 100%;
+               left: 0;
+               width: 100%;
+               height: auto;
+               padding: 30px 20px;
+               z-index: 9999;
+               box-shadow: $shadow;
+               background-color: $darkestWhite;
+               border-top: 1px solid $bg;
+               @include flexCol();
+               align-items: center;
+               justify-content: flex-start;
+               text-align: start;
+               display: none;
+               animation: showMobileNavbar .4s ease;
+               &.show-mobile-navbar {
+                  display: flex;
+               }
+            }
+         }
+
+         .cart_profile {
+            @include flexAlignCenter();
+            //position: relative;
+            gap: 20px;
+
+            .cart {
+               cursor: pointer;
+               transition: .3s ease;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+
+               svg {
+                  color: $color;
+               }
+
+               &:hover {
+                  opacity: .6;
+               }
+
+               &.active svg {
+                  color: $blue;
+               }
+            }
+
+            .profile {
+               @include button();
+               padding: 8px 10px;
+               @include flexAlignCenter();
+               gap: 5px;
+               background-color: $bg;
+               transition: .3s ease;
+
+               svg {
+                  color: $color;
+               }
+
+               &:hover {
+                  opacity: .6;
+               }
+            }
+
+            .burger {
+               @include button();
+               padding: 8px 10px;
+               @include flexAlignCenter();
+               gap: 5px;
+               background-color: $bg;
+               transition: .3s ease;
+               display: none;
+
+               svg {
+                  color: $color;
+               }
+
+               &:hover {
+                  opacity: .6;
+               }
+
+               @media screen and (max-width: 750px) {
+                  display: flex;
+               }
+            }
+         }
       }
-    }
-  }
+   }
 }
 
 @keyframes showMobileNavbar {
-  0%{
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100%{
-    transform: translateY(0);
-    opacity: 1;
-  }
+   0% {
+      transform: translateY(30px);
+      opacity: 0;
+   }
+   100% {
+      transform: translateY(0);
+      opacity: 1;
+   }
 }

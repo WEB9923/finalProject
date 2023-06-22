@@ -2,68 +2,81 @@
 @import "../../styles/Mixins";
 
 
-.card{
-  width: 280px;
-  height: 400px;
-  background-color: $darkestWhite;
-  border-radius: $smallRadius;
-  .card-top{
-    width: 100%;
-    height: calc(400px - 150px);
-    overflow: hidden;
-    user-select: none;
-    img{
+.card {
+   width: 280px;
+   height: 400px;
+   background-color: $darkestWhite;
+   border-radius: $smallRadius;
+
+   .card-top {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .3s ease;
-      pointer-events: none;
-    }
-    &:hover img{
-      scale: 1.2;
-    }
-  }
-  .card-body{
-    padding: 15px 10px;
-    .product-title{
-      padding: 5px 0;
-      a{
-        h1{
-          font-weight: $boldWeight;
-          font-size: calc($medium + 2px);
-          text-transform: capitalize;
-          user-select: none;
-          color: $blue;
-          margin: 0;
-          @include lineClamp1();
-          &:hover{
-            text-decoration: underline;
-            opacity: .7;
-          }
-        }
+      height: calc(400px - 150px);
+      overflow: hidden;
+      user-select: none;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         transition: .3s ease;
+         pointer-events: none;
       }
-    }
-    .product-desc{
-      padding: 5px 0;
-      p{
-        @include lineClamp2();
-        font-weight: $regularWeight;
-        font-size: $small;
+
+      &:hover img {
+         scale: 1.2;
       }
-    }
-    .product-price{
-      padding: 5px 0;
-      h3{
-        font-size: $medium;
-        span{
-          color: $color;
-          font-weight: $mediumWeight;
-          text-transform: capitalize;
-        }
-        color: $darkestBlue;
-        user-select: none;
+   }
+
+   .card-body {
+      padding: 15px 10px;
+
+      .product-title {
+         padding: 5px 0;
+
+         a {
+            h1 {
+               font-weight: $boldWeight;
+               font-size: calc($medium + 2px);
+               text-transform: capitalize;
+               user-select: none;
+               color: $blue;
+               margin: 0;
+               @include lineClamp1();
+
+               &:hover {
+                  text-decoration: underline;
+                  opacity: .7;
+               }
+            }
+         }
       }
-    }
-  }
+
+      .product-desc {
+         padding: 5px 0;
+
+         p {
+            @include lineClamp2();
+            font-weight: $regularWeight;
+            font-size: $small;
+         }
+      }
+
+      .product-price {
+         padding: 5px 0;
+
+         h3 {
+            font-size: $medium;
+
+            span {
+               color: $color;
+               font-weight: $mediumWeight;
+               text-transform: capitalize;
+            }
+
+            color: $darkestBlue;
+            user-select: none;
+         }
+      }
+   }
 }
 

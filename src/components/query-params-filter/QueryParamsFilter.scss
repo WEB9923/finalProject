@@ -1,161 +1,182 @@
 @import "../../styles/Variables";
 @import "../../styles/Mixins";
 
-.filter-content{
-  width: 300px;
-  height: calc(100vh - 90px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  background-color: $darkestWhite;
-  box-shadow: $shadow;
-  padding: 20px 10px;
-  border-radius: $mediumRadius;
-  animation: showHideAnimation .5s ease;
-  .filter-close{
-    @include flexAlignCenter();
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    .close{
-      @include button();
-      background-color: $red;
-      width: 40px;
-      height: 40px;
-      @include flexAlignCenter();
-      justify-content: center;
-      transition: .3s ease;
-      svg{
-        color: $bg;
-      }
-      &:hover{
-        scale: .95;
-        opacity: .6;
-      }
-    }
-  }
-  .filter-header{
-    margin-bottom: 15px;
-    h3{
-      color:$color;
-      font-weight: $boldWeight;
-      text-transform: capitalize;
-      font-size: $large;
-      text-align: center;
-    }
-  }
-  .filter-wrapper{
-    overflow-y: auto;
-    animation: showDetailsAnimation 1s ease;
-    button{
-      @include button();
-      height: 40px;
-      width: 100%;
-      background-color: $bg;
-      @include flexAlignCenter();
-      justify-content: space-between;
-      padding: 0 10px;
-      font-weight: $boldWeight;
-      color: $color;
-      font-size: $medium;
-      z-index: 99;
-      transition: .2s ease;
-      &:hover{
-        opacity: .6;
-      }
-    }
-    .show-category{
+.filter-content {
+   width: 300px;
+   height: calc(100vh - 90px);
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 9999;
+   background-color: $darkestWhite;
+   box-shadow: $shadow;
+   padding: 20px 10px;
+   border-radius: $mediumRadius;
+   animation: showHideAnimation .5s ease;
 
-    }
-    .categories-filter, .brand-filter{
-      width: 100%;
-      @include flexCol();
-      max-height: 250px;
-      overflow-y: auto;
-      background-color: $bg;
-      padding:10px 5px;
-      margin-top: 4px;
-      border-radius: $smallRadius;
-      box-shadow: $shadow;
-      animation: showDetailsAnimation 1s ease;
-      label{
-        padding: 7px 10px;
-        background-color: $darkestWhite;
-        color: $color;
-        width: 100%;
-        margin: 4px 0;
-        border-radius: $smallRadius;
-        cursor: pointer;
-        @include flexAlignCenter();
-        gap: 10px;
-        font-weight: $regularWeight;
-        transition: .3s ease;
-        &:hover{opacity: .7;scale: .95}
-        input[type="radio"]{
-          appearance: none;
-          -webkit-appearance: none;
-          border-radius: calc($smallRadius - 3px);
-          width: 15px;
-          height: 15px;
-          position: relative;
-          border: 2px solid $blue;
-          @include flexAlignCenter();
-          justify-content: center;
-          &:before{
-            content: "";
-            position: absolute;
-            width: 7px;
-            height: 7px;
-            background-color: $darkestBlue;
-            border-radius: calc($smallRadius - 4px);
-            scale: 0;
-            visibility: hidden;
-            transition: .3s ease;
-          }
-          &:checked:before{
-            scale: 1;
-            visibility: visible;
-          }
-        }
+   .filter-close {
+      @include flexAlignCenter();
+      justify-content: flex-end;
+      margin-bottom: 10px;
+
+      .close {
+         @include button();
+         background-color: $red;
+         width: 40px;
+         height: 40px;
+         @include flexAlignCenter();
+         justify-content: center;
+         transition: .3s ease;
+
+         svg {
+            color: $bg;
+         }
+
+         &:hover {
+            scale: .95;
+            opacity: .6;
+         }
       }
-    }
-    .filter{
-      margin-top: 15px;
-      background-color: $blue;
-      color: $bg;
-      justify-content: flex-start;
-      gap: 10px;
-    }
-    .clear-filter-querys{
-      background-color: $red;
-      justify-content: flex-start;
-      gap: 10px;
-      color: $bg;
-      margin-top: 10px;
-    }
-  }
+   }
+
+   .filter-header {
+      margin-bottom: 15px;
+
+      h3 {
+         color: $color;
+         font-weight: $boldWeight;
+         text-transform: capitalize;
+         font-size: $large;
+         text-align: center;
+      }
+   }
+
+   .filter-wrapper {
+      overflow-y: auto;
+      animation: showDetailsAnimation 1s ease;
+
+      button {
+         @include button();
+         height: 40px;
+         width: 100%;
+         background-color: $bg;
+         @include flexAlignCenter();
+         justify-content: space-between;
+         padding: 0 10px;
+         font-weight: $boldWeight;
+         color: $color;
+         font-size: $medium;
+         z-index: 99;
+         transition: .2s ease;
+
+         &:hover {
+            opacity: .6;
+         }
+      }
+
+      .show-category {
+
+      }
+
+      .categories-filter, .brand-filter {
+         width: 100%;
+         @include flexCol();
+         max-height: 250px;
+         overflow-y: auto;
+         background-color: $bg;
+         padding: 10px 5px;
+         margin-top: 4px;
+         border-radius: $smallRadius;
+         box-shadow: $shadow;
+         animation: showDetailsAnimation 1s ease;
+
+         label {
+            padding: 7px 10px;
+            background-color: $darkestWhite;
+            color: $color;
+            width: 100%;
+            margin: 4px 0;
+            border-radius: $smallRadius;
+            cursor: pointer;
+            @include flexAlignCenter();
+            gap: 10px;
+            font-weight: $regularWeight;
+            transition: .3s ease;
+
+            &:hover {
+               opacity: .7;
+               scale: .95
+            }
+
+            input[type="radio"] {
+               appearance: none;
+               -webkit-appearance: none;
+               border-radius: calc($smallRadius - 3px);
+               width: 15px;
+               height: 15px;
+               position: relative;
+               border: 2px solid $blue;
+               @include flexAlignCenter();
+               justify-content: center;
+
+               &:before {
+                  content: "";
+                  position: absolute;
+                  width: 7px;
+                  height: 7px;
+                  background-color: $darkestBlue;
+                  border-radius: calc($smallRadius - 4px);
+                  scale: 0;
+                  visibility: hidden;
+                  transition: .3s ease;
+               }
+
+               &:checked:before {
+                  scale: 1;
+                  visibility: visible;
+               }
+            }
+         }
+      }
+
+      .filter {
+         margin-top: 15px;
+         background-color: $blue;
+         color: $bg;
+         justify-content: flex-start;
+         gap: 10px;
+      }
+
+      .clear-filter-querys {
+         background-color: $red;
+         justify-content: flex-start;
+         gap: 10px;
+         color: $bg;
+         margin-top: 10px;
+      }
+   }
 }
 
 @keyframes showHideAnimation {
-  0%{
-    left: -300px;
-    opacity: .8;
-  }
-  100%{
-    left: 0;
-    opacity: 1;
-  }
+   0% {
+      left: -300px;
+      opacity: .8;
+   }
+   100% {
+      left: 0;
+      opacity: 1;
+   }
 }
 
 @keyframes showDetailsAnimation {
-  0%{
-    transform: translateY(-30px);
-    visibility: hidden;
-    scale: .3;
-  }
-  100%{
-    transform: translateY(0);
-    visibility: visible;
-    scale: 1;
-  }
+   0% {
+      transform: translateY(-30px);
+      visibility: hidden;
+      scale: .3;
+   }
+   100% {
+      transform: translateY(0);
+      visibility: visible;
+      scale: 1;
+   }
 }

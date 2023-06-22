@@ -13,59 +13,59 @@ import {JWTdecoder} from "../utils/JWTdecoder.js";
 import Error404 from "../pages/404/Error404.jsx";
 
 const Routes = createBrowserRouter([
-    {
-        path: "/",
-        element: <App/>,
-        errorElement:<Error404/>,
-        children: [
-            {
-                path: "/auth",
-                element: <AuthLayout/>,
-                loader: () => {
-                    const token = localStorage.getItem("token");
-                    if (token) {
-                        const decodedToken = JWTdecoder(token);
-                        const {exp} = decodedToken;
-                        const now = Date.now() / 1000;
-                        if (exp && exp > now) {
-                            return redirect("/");
-                        }
-                    }
-                    return null;
-                },
-                children: [
-                    {index: true, element: <Login/>},
-                    {path: "/auth/login", element: <Login/>},
-                    {path: "/auth/register", element: <Register/>}
-                ]
+   {
+      path: "/",
+      element: <App/>,
+      errorElement: <Error404/>,
+      children: [
+         {
+            path: "/auth",
+            element: <AuthLayout/>,
+            loader: () => {
+               const token = localStorage.getItem("token");
+               if (token) {
+                  const decodedToken = JWTdecoder(token);
+                  const {exp} = decodedToken;
+                  const now = Date.now() / 1000;
+                  if (exp && exp > now) {
+                     return redirect("/");
+                  }
+               }
+               return null;
             },
-            {
-                path: "/",
-                element: <Layout/>,
-                loader: () => {
-                    const token = localStorage.getItem("token");
-                    if (token) {
-                        const decodedToken = JWTdecoder(token);
-                        const {exp} = decodedToken;
-                        const now = Date.now() / 1000;
-                        if (!exp || exp < now) {
-                            localStorage.removeItem("token");
-                            return redirect("/auth");
-                        }
-                        return null;
-                    }
-                    return redirect("/auth");
-                },
-                children: [
-                    {index: true, element: <Home/>},
-                    {path: "/home", element: <Home/>},
-                    {path: "/products", element: <Products/>},
-                    {path: "/product/:productId", element: <SingleProduct/>},
-                    {path: "/favorites", element: <Favorites/>},
-                    {path: "/cart", element: <Cart/>}
-                ]
-            }
-        ]
-    }
+            children: [
+               {index: true, element: <Login/>},
+               {path: "/auth/login", element: <Login/>},
+               {path: "/auth/register", element: <Register/>}
+            ]
+         },
+         {
+            path: "/",
+            element: <Layout/>,
+            loader: () => {
+               const token = localStorage.getItem("token");
+               if (token) {
+                  const decodedToken = JWTdecoder(token);
+                  const {exp} = decodedToken;
+                  const now = Date.now() / 1000;
+                  if (!exp || exp < now) {
+                     localStorage.removeItem("token");
+                     return redirect("/auth");
+                  }
+                  return null;
+               }
+               return redirect("/auth");
+            },
+            children: [
+               {index: true, element: <Home/>},
+               {path: "/home", element: <Home/>},
+               {path: "/products", element: <Products/>},
+               {path: "/product/:productId", element: <SingleProduct/>},
+               {path: "/favorites", element: <Favorites/>},
+               {path: "/cart", element: <Cart/>}
+            ]
+         }
+      ]
+   }
 ]);
 export default Routes;

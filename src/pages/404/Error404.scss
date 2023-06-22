@@ -2,41 +2,45 @@
 @import "../../styles/Mixins";
 
 
+.error-404 {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 100px;
 
-.error-404{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 100px;
-  .error-image{
-    width: 550px;
-    img{
-      width: 100%;
-      object-fit: cover;
-    }
-    @media screen and (max-width: 750px){
-      width: 450px;
-    }
-    @media screen and (max-width: 450px){
-      width: 350px;
-    }
-  }
-  .error-404-btn{
-    a{
-      @include button();
-      background-color: $blue;
-      color: $bg;
-      font-weight: $boldWeight;
-      text-transform: capitalize;
-      font-size: $medium;
-      padding: 15px 20px;
-      transition: .3s ease;
-      &:hover{
-        opacity: .7;
+   .error-image {
+      width: 550px;
+
+      img {
+         width: 100%;
+         object-fit: cover;
       }
-    }
-  }
+
+      @media screen and (max-width: 750px) {
+         width: 450px;
+      }
+      @media screen and (max-width: 450px) {
+         width: 350px;
+      }
+   }
+
+   .error-404-btn {
+      a {
+         @include button();
+         background-color: $blue;
+         color: $bg;
+         font-weight: $boldWeight;
+         text-transform: capitalize;
+         font-size: $medium;
+         padding: 15px 20px;
+         transition: .3s ease;
+
+         &:hover {
+            opacity: .7;
+         }
+      }
+   }
 }

@@ -1,24 +1,25 @@
 @import "../../styles/Variables";
 @import "../../styles/Mixins";
 
-.load-more-btn{
-  min-width: 130px;
-  height: 50px;
-  background-color: $blue;
-  color: $bg;
-  border-radius: $smallRadius;
-  @include button();
-  font-size: $medium;
-  font-weight: $mediumWeight;
-  text-transform: capitalize;
-  @include flexAlignCenter();
-  justify-content: center;
-  gap: 3px;
-  padding: 0 15px;
-  margin: auto;
-  &:disabled{
-    opacity: .5;
-    pointer-events: none;
-  }
+.load-more-btn {
+   min-width: 130px;
+   height: 50px;
+   background-color: $blue;
+   color: $bg;
+   border-radius: $smallRadius;
+   @include button();
+   font-size: $medium;
+   font-weight: $mediumWeight;
+   text-transform: capitalize;
+   @include flexAlignCenter();
+   justify-content: center;
+   gap: 3px;
+   padding: 0 15px;
+   margin: auto;
+
+   &:disabled {
+      opacity: .5;
+      pointer-events: none;
+   }
 }
 

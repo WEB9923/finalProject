@@ -2,41 +2,46 @@
 @import "../../styles/Mixins";
 
 
-.products{
-  .container{
-    @include container();
-    h1{
-      text-transform: capitalize;
-      color: $color;
-      font-weight: $extraBoldWeight;
-      font-size: $extra;
-      margin-bottom: 20px;
-    }
-    .category-content{
-      .category{
-        @include button();
-        padding: 8px 10px;
-        @include flexAlignCenter();
-        gap: 5px;
-        background-color: $darkestWhite;
-        transition: .3s ease;
-        svg{
-          color: $color;
-        }
-        &:hover{
-          opacity: .6;
-          scale: .95;
-        }
+.products {
+   .container {
+      @include container();
+
+      h1 {
+         text-transform: capitalize;
+         color: $color;
+         font-weight: $extraBoldWeight;
+         font-size: $extra;
+         margin-bottom: 20px;
       }
-    }
-    .products-wrapper{
-      margin-top: 30px;
-      @include flexWrapper();
-      padding-bottom: 50px;
-      min-height: 250px;
-      position: relative;
-      justify-content: center;
-    }
-  }
+
+      .category-content {
+         .category {
+            @include button();
+            padding: 8px 10px;
+            @include flexAlignCenter();
+            gap: 5px;
+            background-color: $darkestWhite;
+            transition: .3s ease;
+
+            svg {
+               color: $color;
+            }
+
+            &:hover {
+               opacity: .6;
+               scale: .95;
+            }
+         }
+      }
+
+      .products-wrapper {
+         margin-top: 30px;
+         @include flexWrapper();
+         padding-bottom: 50px;
+         min-height: 250px;
+         position: relative;
+         justify-content: center;
+      }
+   }
 }
 

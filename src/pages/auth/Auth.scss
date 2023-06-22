@@ -1,124 +1,149 @@
 @import "../../styles/Variables";
 @import "../../styles/Mixins";
 
-.form-section{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  .container{
-    @include container();
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 100px;
-    .form-image{
-      width: 45%;
-      pointer-events: none;
-      img{
-        width: 100%;
-        height: 100%;
-      }
-    }
-    @media screen and (max-width: 900px){
-      justify-content: center;
-      gap: 0;
-      .form-image{display: none;}
-    }
-    form{
-      @include form();
-      h1{
-        text-transform: capitalize;
-        color: $color;
-        font-size: $mega;
-        position: relative;
-        padding: 0 70px 5px 0;
-        width: fit-content;
-        &:before{
-          content: "";
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          height: 4px;
-          background-color:$bg;
-          border-radius: $smallRadius;
-        }
-      }
-      .form-wrapper{
-        margin-top: 20px;
-        .form-control{
-          margin-top: 15px;
-          label{
-            margin-left: 5px;
-            color: $color;
-            text-transform: capitalize;
-            font-weight: $mediumWeight;
-          }
-          .input-control{
-            position: relative;
-            input{
-              @include input();
-            }
-            #loginPassword,#password,#confirm{padding-right: 40px;}
-            .show_hide_password{
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: absolute;
-              width: 30px;
-              height: 30px;
-              background-color: $darkestWhite;
-              border-radius: 50%;
-              user-select: none;
-              cursor: pointer;
-              opacity: .8;
-              top: 50%;
-              transform: translateY(-50%);
-              right: 6px;
-              svg{
-                color: $color;
-              }
-            }
-          }
-          .error-text{
-            color: $error;
-            font-size: $small;
-            margin-top: 3px;
-          }
-          button{
-            @include button();
-            @include flexAlignCenter();
-            justify-content: center;
-            gap: 5px;
-            background-color: $blue;
+.form-section {
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+
+   .container {
+      @include container();
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 100px;
+
+      .form-image {
+         width: 45%;
+         pointer-events: none;
+
+         img {
             width: 100%;
-            height: 45px;
-            font-weight: $mediumWeight;
-            font-size: $medium;
-            color: $bg;
-            transition: all .2s ease;
-            &:hover{
-              background-color: $darkestBlue;
-            }
-            &:active{
-              scale: .95;
-            }
-          }
-          p{
-            color: $color;
-            font-weight: $regularWeight;
-            text-transform: capitalize;
-            font-size: $small;
-            a{
-              color: $darkestBlue;
-              font-weight: $mediumWeight;
-            }
-          }
-        }
+            height: 100%;
+         }
       }
-    }
-  }
+
+      @media screen and (max-width: 900px) {
+         justify-content: center;
+         gap: 0;
+         .form-image {
+            display: none;
+         }
+      }
+
+      form {
+         @include form();
+
+         h1 {
+            text-transform: capitalize;
+            color: $color;
+            font-size: $mega;
+            position: relative;
+            padding: 0 70px 5px 0;
+            width: fit-content;
+
+            &:before {
+               content: "";
+               position: absolute;
+               top: 100%;
+               left: 0;
+               width: 100%;
+               height: 4px;
+               background-color: $bg;
+               border-radius: $smallRadius;
+            }
+         }
+
+         .form-wrapper {
+            margin-top: 20px;
+
+            .form-control {
+               margin-top: 15px;
+
+               label {
+                  margin-left: 5px;
+                  color: $color;
+                  text-transform: capitalize;
+                  font-weight: $mediumWeight;
+               }
+
+               .input-control {
+                  position: relative;
+
+                  input {
+                     @include input();
+                  }
+
+                  #loginPassword, #password, #confirm {
+                     padding-right: 40px;
+                  }
+
+                  .show_hide_password {
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     position: absolute;
+                     width: 30px;
+                     height: 30px;
+                     background-color: $darkestWhite;
+                     border-radius: 50%;
+                     user-select: none;
+                     cursor: pointer;
+                     opacity: .8;
+                     top: 50%;
+                     transform: translateY(-50%);
+                     right: 6px;
+
+                     svg {
+                        color: $color;
+                     }
+                  }
+               }
+
+               .error-text {
+                  color: $error;
+                  font-size: $small;
+                  margin-top: 3px;
+               }
+
+               button {
+                  @include button();
+                  @include flexAlignCenter();
+                  justify-content: center;
+                  gap: 5px;
+                  background-color: $blue;
+                  width: 100%;
+                  height: 45px;
+                  font-weight: $mediumWeight;
+                  font-size: $medium;
+                  color: $bg;
+                  transition: all .2s ease;
+
+                  &:hover {
+                     background-color: $darkestBlue;
+                  }
+
+                  &:active {
+                     scale: .95;
+                  }
+               }
+
+               p {
+                  color: $color;
+                  font-weight: $regularWeight;
+                  text-transform: capitalize;
+                  font-size: $small;
+
+                  a {
+                     color: $darkestBlue;
+                     font-weight: $mediumWeight;
+                  }
+               }
+            }
+         }
+      }
+   }
 }
 
